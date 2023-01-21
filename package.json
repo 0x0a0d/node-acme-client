@@ -1,5 +1,8 @@
 {
-    "name": "acme-client",
+    "name": "@cylution/acme-client",
+    "publishConfig": {
+        "access": "restricted"
+    },
     "description": "Simple and unopinionated ACME client",
     "author": "nmorsman",
     "version": "5.0.0",
