@@ -4,6 +4,8 @@
 
 const axios = require('axios');
 const adapter = require('axios/lib/adapters/http');
+const http = require('http');
+const https = require('https');
 const pkg = require('./../package.json');
 
 
@@ -11,7 +13,10 @@ const pkg = require('./../package.json');
  * Instance
  */
 
-const instance = axios.create();
+const instance = axios.create({
+    httpAgent: new http.Agent({ keepAlive: true }),
+    httpsAgent: new https.Agent({ keepAlive: true })
+});
 
 /* Default User-Agent */
 instance.defaults.headers.common['User-Agent'] = `node-${pkg.name}/${pkg.version}`;
