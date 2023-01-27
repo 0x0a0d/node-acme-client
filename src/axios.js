@@ -14,7 +14,7 @@ const pkg = require('./../package.json');
 const instance = axios.create();
 
 /* Default User-Agent */
-instance.defaults.headers.common['User-Agent'] = `node-${pkg.name}/${pkg.version}`;
+instance.defaults.headers.common['User-Agent'] = `node-${pkg.name.split('/').pop()}/${pkg.version}`;
 
 /* Default ACME settings */
 instance.defaults.acmeSettings = {
